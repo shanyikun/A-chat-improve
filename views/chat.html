@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <script src="../node_modules/art-template/lib/template-web.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+{{if user}}
+<div id="txt">
+
+</div>
+<form action='/send' method="post" id="form1" name="form1">
+    <label for="message">留言内容</label><br>
+    <div id="element">
+    <input type="text" name="message" id="message"  required>
+    <input type="submit" value="SEND" id="submit"><br>
+    </div>
+    <div id="exit">
+    <input type="button" value='退出' id="logout">
+    </div>
+</form>
+<h2 id="inform"></h2>
+<div id="userinf">
+<span>当前登录用户：</span><span id="inform1">{{user.name}}</span>
+</div>
+<script type="tpl" id="shan">
+    {{template1}}
+    {{template2}}
+    <p style="background-color:#76cc00;padding:5px;border-radius:3px;margin:10px;
+    list-style:none;text-align:right;margin-left:50%;">{{template3}}
+    says: {{template4}}</p>
+    {{template5}}
+    <p style="background-color:#ffffff;padding:5px;border-radius:3px;margin:10px;
+    list-style:none;text-align:left;margin-right:50%;">{{template6}}
+    says: {{template7}}</p>
+    {{template8}}
+    {{template9}}
+
+</script>
+<script src="../public/javascripts/ajax.js"></script>
+<script src="../public/javascripts/logout.js"></script>
+{{else}}
+<h2>请重新登录</h2><br>
+<a href="/">登录</a>
+{{/if}}
+</body>
+</html>

@@ -1,0 +1,20 @@
+{{extend './module.html'}}
+
+{{block 'title'}}
+<title>register</title>
+{{/block}}
+
+{{block 'content'}}
+<h2 id="inform"></h2>
+<form action="/register" method="post" id="form">
+    <span>name</span><input type="text" name="name" id="focus"><br>
+    <span>password</span><input type="password" name="password"><br>
+    <span>email</span><input type="email" name="email"><br>
+    <input type="submit" value="提交" id="submit">
+</form>
+{{/block}}
+
+{{block 'script'}}
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../public/javascripts/register.js"></script>
+{{/block}}

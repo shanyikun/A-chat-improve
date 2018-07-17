@@ -1,0 +1,25 @@
+{{extend './module.html'}}
+
+{{block 'title'}}
+<title>login</title>
+{{/block}}
+
+{{block 'content'}}
+<h2 id="inform"></h2>
+<form action="/login" method="post" id="form">
+    <label for="focus">用户名</label><br>
+    <input type="text" name="name" id="focus"><br>
+    <label for="password">密码</label><br>
+    <input type="password" name="password" id="password"><br>
+    <label for="email">邮箱</label><br>
+    <input type="email" name="email" id="email"><br>
+    <input type="submit" value="登陆"><br>
+    <span>Forget the password?</span><a href="">Find the password</a><br>
+    <span>没有账号?</span><a href="/register">注册</a>
+</form>
+{{/block}}
+
+{{block 'script'}}
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../public/javascripts/login.js"></script>
+{{/block}}
