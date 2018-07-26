@@ -4,13 +4,41 @@
 <title>register</title>
 {{/block}}
 
+{{block 'css'}}
+<link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../public/stylesheets/float-label.css" rel="stylesheet">
+{{/block}}
 {{block 'content'}}
-<h2 id="inform"></h2>
+<!--<h2 id="inform"></h2>
 <form action="/register" method="post" id="form">
     <span>name</span><input type="text" name="name" id="focus"><br>
     <span>password</span><input type="password" name="password"><br>
     <span>email</span><input type="email" name="email"><br>
     <input type="submit" value="提交" id="submit">
+</form>-->
+
+<form class="form-signin" action="/register" method="post" id="form">
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">注册</h1>
+        <p id="inform" ></p>
+    </div>
+
+    <div class="form-label-group">
+        <input type="text" id="username" class="form-control" name="name" required autofocus>
+        <label for="inputEmail">用户名</label>
+    </div>
+
+    <div class="form-label-group">
+        <input type="email" id="inputEmail" class="form-control" name="email" required autofocus>
+        <label for="inputEmail">邮箱</label>
+    </div>
+
+    <div class="form-label-group">
+        <input type="password" id="inputPassword" class="form-control" name="password" required>
+        <label for="inputPassword">密码</label>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
 </form>
 {{/block}}
 

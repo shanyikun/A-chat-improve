@@ -4,8 +4,13 @@
 <title>login</title>
 {{/block}}
 
+{{block 'css'}}
+<link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../public/stylesheets/float-label.css" rel="stylesheet">
+{{/block}}
+
 {{block 'content'}}
-<h2 id="inform"></h2>
+<!--<h2 id="inform"></h2>
 <form action="/login" method="post" id="form">
     <label for="focus">用户名</label><br>
     <input type="text" name="name" id="focus"><br>
@@ -15,6 +20,31 @@
     <input type="email" name="email" id="email"><br>
     <input type="submit" value="登陆"><br>
     <span>Forget the password?</span><a href="">Find the password</a><br>
+    <span>没有账号?</span><a href="/register">注册</a>
+</form>-->
+
+<form class="form-signin" action="/login" method="post" id="form">
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">登陆</h1>
+        <p id="inform" ></p>
+    </div>
+
+    <div class="form-label-group">
+        <input type="text" id="username" class="form-control" name="name" required autofocus>
+        <label for="inputEmail">用户名</label>
+    </div>
+
+    <div class="form-label-group">
+        <input type="email" id="inputEmail" class="form-control" name="email" required autofocus>
+        <label for="inputEmail">邮箱</label>
+    </div>
+
+    <div class="form-label-group">
+        <input type="password" id="inputPassword" class="form-control" name="password" required>
+        <label for="inputPassword">密码</label>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
     <span>没有账号?</span><a href="/register">注册</a>
 </form>
 {{/block}}

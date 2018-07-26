@@ -5,7 +5,8 @@ $('#logout').bind('click',function(event){
         data: null,
         url: '/logout',
         success: function(data){
-            document.body.innerHTML=data
+            /*document.body.innerHTML=data*/
+            window.location.href='/'
         }
     })
     event.preventDefault()

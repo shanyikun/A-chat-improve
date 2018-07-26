@@ -164,8 +164,10 @@ router.post('/login',function(request,response){       //提交登录页面路�
 
 router.get('/logout',function(request,response){       //退出页面路由
     delete request.session.user
-    response.send('<h2>请重新登录</h2><br>\n' +
-        '<a href="/">登录</a>')
+    response.json({
+        err_code:0,
+        message: 'logout success'
+    })
 })
 
 
